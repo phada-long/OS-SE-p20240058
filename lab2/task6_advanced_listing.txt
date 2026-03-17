@@ -1,0 +1,229 @@
+=== Task 6: Advanced Listing & Directory Audit ===
+--- Recursive Listing (ls -R) ---
+techcorp:
+engineering
+hr
+marketing
+
+techcorp/engineering:
+backend
+devops
+frontend
+
+techcorp/engineering/backend:
+app.js
+database.sql
+pipeline_backup.txt
+server_config.txt
+
+techcorp/engineering/devops:
+Dockerfile
+docker-compose.yml
+pipeline.txt
+security_audit.txt
+server_notice.txt
+
+techcorp/engineering/frontend:
+frontend_config.txt
+index.html
+styles.css
+
+techcorp/hr:
+onboarding
+policies
+
+techcorp/hr/onboarding:
+checklist.txt
+handbook.txt
+leave_policy.txt
+welcome_guide.txt
+
+techcorp/hr/policies:
+leave_policy.txt
+remote_work.txt
+
+techcorp/marketing:
+assets
+campaigns
+
+techcorp/marketing/assets:
+banner.jpg
+brochure.pdf
+logo.png
+logo_brief.txt
+
+techcorp/marketing/campaigns:
+q1_2026_launch.txt
+social_media.txt
+
+--- Sort by Size: engineering/ (ls -lS) ---
+total 4
+-rw-r--r-- 1 phada phada 26 Mar 17 14:30 frontend_config.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:30 index.html
+-rw-r--r-- 1 phada phada  0 Mar 17 14:30 styles.css
+total 8
+-rw-r--r-- 1 phada phada 29 Mar 17 14:44 pipeline_backup.txt
+-rw-r--r-- 1 phada phada 29 Mar 17 14:31 server_config.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 app.js
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 database.sql
+total 12
+-rw-r--r-- 1 phada phada 48 Mar 17 14:40 server_notice.txt
+-rw-r--r-- 1 phada phada 34 Mar 17 14:44 security_audit.txt
+-rw-r--r-- 1 phada phada 29 Mar 17 14:31 pipeline.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 Dockerfile
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 docker-compose.yml
+
+--- Sort by Time: techcorp/ (ls -lt) ---
+total 8
+-rw-r--r-- 1 phada phada 39 Mar 17 14:30 leave_policy.txt
+-rw-r--r-- 1 phada phada 32 Mar 17 14:30 remote_work.txt
+total 12
+-rw-r--r-- 1 phada phada 39 Mar 17 14:41 leave_policy.txt
+-rw-r--r-- 1 phada phada 23 Mar 17 14:40 handbook.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:30 checklist.txt
+-rw-r--r-- 1 phada phada 52 Mar 17 14:30 welcome_guide.txt
+total 8
+-rw-r--r-- 1 phada phada 32 Mar 17 14:31 q1_2026_launch.txt
+-rw-r--r-- 1 phada phada 35 Mar 17 14:31 social_media.txt
+
+--- Human-Readable (ls -lh) ---
+total 4.0K
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 banner.jpg
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 brochure.pdf
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 logo.png
+-rw-r--r-- 1 phada phada 22 Mar 17 14:40 logo_brief.txt
+total 12K
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 Dockerfile
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 docker-compose.yml
+-rw-r--r-- 1 phada phada 29 Mar 17 14:31 pipeline.txt
+-rw-r--r-- 1 phada phada 34 Mar 17 14:44 security_audit.txt
+-rw-r--r-- 1 phada phada 48 Mar 17 14:40 server_notice.txt
+
+--- Reverse Sort by Size (ls -rlS) ---
+total 8
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 database.sql
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 app.js
+-rw-r--r-- 1 phada phada 29 Mar 17 14:31 server_config.txt
+-rw-r--r-- 1 phada phada 29 Mar 17 14:44 pipeline_backup.txt
+
+--- Reverse Sort by Time (ls -rlt) ---
+total 12
+-rw-r--r-- 1 phada phada 52 Mar 17 14:30 welcome_guide.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:30 checklist.txt
+-rw-r--r-- 1 phada phada 23 Mar 17 14:40 handbook.txt
+-rw-r--r-- 1 phada phada 39 Mar 17 14:41 leave_policy.txt
+
+--- Combined: Recursive + Human-Readable + Sort by Size (ls -lhRS) ---
+techcorp/:
+total 12K
+drwxr-xr-x 5 phada phada 4.0K Mar 17 14:30 engineering
+drwxr-xr-x 4 phada phada 4.0K Mar 17 14:30 hr
+drwxr-xr-x 4 phada phada 4.0K Mar 17 14:41 marketing
+
+techcorp/engineering:
+total 12K
+drwxr-xr-x 2 phada phada 4.0K Mar 17 14:44 backend
+drwxr-xr-x 2 phada phada 4.0K Mar 17 14:44 devops
+drwxr-xr-x 2 phada phada 4.0K Mar 17 14:45 frontend
+
+techcorp/engineering/backend:
+total 8.0K
+-rw-r--r-- 1 phada phada 29 Mar 17 14:44 pipeline_backup.txt
+-rw-r--r-- 1 phada phada 29 Mar 17 14:31 server_config.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 app.js
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 database.sql
+
+techcorp/engineering/devops:
+total 12K
+-rw-r--r-- 1 phada phada 48 Mar 17 14:40 server_notice.txt
+-rw-r--r-- 1 phada phada 34 Mar 17 14:44 security_audit.txt
+-rw-r--r-- 1 phada phada 29 Mar 17 14:31 pipeline.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 Dockerfile
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 docker-compose.yml
+
+techcorp/engineering/frontend:
+total 4.0K
+-rw-r--r-- 1 phada phada 26 Mar 17 14:30 frontend_config.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:30 index.html
+-rw-r--r-- 1 phada phada  0 Mar 17 14:30 styles.css
+
+techcorp/hr:
+total 8.0K
+drwxr-xr-x 2 phada phada 4.0K Mar 17 14:41 onboarding
+drwxr-xr-x 2 phada phada 4.0K Mar 17 14:44 policies
+
+techcorp/hr/onboarding:
+total 12K
+-rw-r--r-- 1 phada phada 52 Mar 17 14:30 welcome_guide.txt
+-rw-r--r-- 1 phada phada 39 Mar 17 14:41 leave_policy.txt
+-rw-r--r-- 1 phada phada 23 Mar 17 14:40 handbook.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:30 checklist.txt
+
+techcorp/hr/policies:
+total 8.0K
+-rw-r--r-- 1 phada phada 39 Mar 17 14:30 leave_policy.txt
+-rw-r--r-- 1 phada phada 32 Mar 17 14:30 remote_work.txt
+
+techcorp/marketing:
+total 8.0K
+drwxr-xr-x 2 phada phada 4.0K Mar 17 14:41 assets
+drwxr-xr-x 2 phada phada 4.0K Mar 17 14:45 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-r--r-- 1 phada phada 22 Mar 17 14:40 logo_brief.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 banner.jpg
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 brochure.pdf
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 logo.png
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-r--r-- 1 phada phada 35 Mar 17 14:31 social_media.txt
+-rw-r--r-- 1 phada phada 32 Mar 17 14:31 q1_2026_launch.txt
+
+--- Challenge Investigation ---
+--- 6a: Newest in onboarding (ls -lt) ---
+total 12
+-rw-r--r-- 1 phada phada 39 Mar 17 14:41 leave_policy.txt
+-rw-r--r-- 1 phada phada 23 Mar 17 14:40 handbook.txt
+-rw-r--r-- 1 phada phada  0 Mar 17 14:30 checklist.txt
+-rw-r--r-- 1 phada phada 52 Mar 17 14:30 welcome_guide.txt
+--- 6b: All files in marketing recursive human-readable (ls -lhR) ---
+techcorp/marketing/:
+total 8.0K
+drwxr-xr-x 2 phada phada 4.0K Mar 17 14:41 assets
+drwxr-xr-x 2 phada phada 4.0K Mar 17 14:45 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 banner.jpg
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 brochure.pdf
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 logo.png
+-rw-r--r-- 1 phada phada 22 Mar 17 14:40 logo_brief.txt
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-r--r-- 1 phada phada 32 Mar 17 14:31 q1_2026_launch.txt
+-rw-r--r-- 1 phada phada 35 Mar 17 14:31 social_media.txt
+--- 6c: Smallest first in devops (ls -rlS) ---
+total 12
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 docker-compose.yml
+-rw-r--r-- 1 phada phada  0 Mar 17 14:31 Dockerfile
+-rw-r--r-- 1 phada phada 29 Mar 17 14:31 pipeline.txt
+-rw-r--r-- 1 phada phada 34 Mar 17 14:44 security_audit.txt
+-rw-r--r-- 1 phada phada 48 Mar 17 14:40 server_notice.txt
+--- 6d: Hidden files in ~ sorted by size (ls -lahS) ---
+total 44K
+drwxr-x--- 5 phada phada 4.0K Mar 17 14:37 .
+drwxr-xr-x 3 root  root  4.0K Mar 17 11:37 ..
+drwx------ 2 phada phada 4.0K Mar 17 11:37 .cache
+drwx------ 2 phada phada 4.0K Mar 17 13:34 .ssh
+drwxr-xr-x 3 phada phada 4.0K Mar 17 11:40 os-se-p20240058
+-rw-r--r-- 1 phada phada 3.7K Mar 17 11:37 .bashrc
+-rw------- 1 phada phada 2.7K Mar 17 14:17 .bash_history
+-rw-r--r-- 1 phada phada  807 Mar 17 11:37 .profile
+-rw------- 1 phada phada  442 Mar 17 14:37 .lesshst
+-rw-r--r-- 1 phada phada  220 Mar 17 11:37 .bash_logout
+-rw-r--r-- 1 phada phada   51 Mar 17 11:49 .gitconfig
+-rw-rw-r-- 1 phada phada    0 Mar 17 11:37 .motd_shown
+-rw-r--r-- 1 phada phada    0 Mar 17 11:38 .sudo_as_admin_successful

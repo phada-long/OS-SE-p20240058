@@ -1,0 +1,43 @@
+/home/phada
+total 40
+drwxr-x--- 5 phada phada 4096 Mar 17 13:33 .
+drwxr-xr-x 3 root  root  4096 Mar 17 11:37 ..
+-rw------- 1 phada phada 2717 Mar 17 14:17 .bash_history
+-rw-r--r-- 1 phada phada  220 Mar 17 11:37 .bash_logout
+-rw-r--r-- 1 phada phada 3771 Mar 17 11:37 .bashrc
+drwx------ 2 phada phada 4096 Mar 17 11:37 .cache
+-rw-r--r-- 1 phada phada   51 Mar 17 11:49 .gitconfig
+-rw-rw-r-- 1 phada phada    0 Mar 17 11:37 .motd_shown
+-rw-r--r-- 1 phada phada  807 Mar 17 11:37 .profile
+drwx------ 2 phada phada 4096 Mar 17 13:34 .ssh
+-rw-r--r-- 1 phada phada    0 Mar 17 11:38 .sudo_as_admin_successful
+drwxr-xr-x 3 phada phada 4096 Mar 17 11:40 os-se-p20240058
+--- Root directory (/) ---
+/
+bin
+bin.usr-is-merged
+boot
+dev
+etc
+home
+init
+lib
+lib.usr-is-merged
+lib64
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+sbin.usr-is-merged
+snap
+srv
+sys
+tmp
+usr
+var
+--- Back to home ---
+/home/phada

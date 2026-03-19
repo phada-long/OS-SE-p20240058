@@ -1,0 +1,13 @@
+Ign:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+Err:2 http://security.ubuntu.com/ubuntu noble-security Release
+  404  Not Found [IP: 185.125.190.82 80]
+Ign:3 http://archive.ubuntu.com/ubuntu noble InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Ign:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Err:6 http://archive.ubuntu.com/ubuntu noble Release
+  404  Not Found [IP: 91.189.92.23 80]
+Err:7 http://archive.ubuntu.com/ubuntu noble-updates Release
+  404  Not Found [IP: 91.189.92.23 80]
+Err:8 http://archive.ubuntu.com/ubuntu noble-backports Release
+  404  Not Found [IP: 91.189.92.23 80]
+Reading package lists...

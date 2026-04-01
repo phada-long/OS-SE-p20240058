@@ -1,0 +1,101 @@
+=== Full Command History ===
+  826  ls -l libtechcorp_sysinfo.so >> ../task5_shared_library.txt
+  827  cat > sysinfo_test.c << 'EOF'
+#include <stdio.h>
+#include "techcorp_sysinfo.h"
+
+int main(void) {
+    printf("=== TechCorp System Info Report ===\n");
+    printf("Hostname : %s\n", tc_get_hostname());
+    printf("Uptime   : %s\n", tc_get_uptime());
+    printf("CPU Cores: %d\n", tc_get_cpu_count());
+    printf("===================================\n");
+    return 0;
+}
+EOF
+
+  828  echo "" >> ../task5_shared_library.txt
+  829  echo "--- Partner B: Test program written ---" >> ../task5_shared_library.txt
+  830  cat sysinfo_test.c >> ../task5_shared_library.txt
+  831  gcc sysinfo_test.c -L. -ltechcorp_sysinfo -o sysinfo_test
+  832  echo "" >> ../task5_shared_library.txt
+  833  echo "--- Integration: ldd on test program ---" >> ../task5_shared_library.txt
+  834  ldd ./sysinfo_test >> ../task5_shared_library.txt 2>&1
+  835  echo "" >> ../task5_shared_library.txt
+  836  echo "--- Integration: Test run ---" >> ../task5_shared_library.txt
+  837  LD_LIBRARY_PATH=. ./sysinfo_test >> ../task5_shared_library.txt
+  838  cat > techcorp_sysinfo.h << 'EOF'
+#ifndef TECHCORP_SYSINFO_H
+#define TECHCORP_SYSINFO_H
+
+const char* tc_get_hostname(void);
+const char* tc_get_uptime(void);
+int tc_get_cpu_count(void);
+long tc_get_memory_mb(void);
+
+#endif
+EOF
+
+  839  cat > techcorp_memory.c << 'EOF'
+#include "techcorp_sysinfo.h"
+#include <stdio.h>
+
+long tc_get_memory_mb(void) {
+    FILE *fp = fopen("/proc/meminfo", "r");
+    if (fp) {
+        long mem_kb = 0;
+        if (fscanf(fp, "MemTotal: %ld kB", &mem_kb) == 1) {
+            fclose(fp);
+            return mem_kb / 1024;
+        }
+        fclose(fp);
+    }
+    return -1;
+}
+EOF
+
+  840  gcc -fPIC -c techcorp_sysinfo.c -o techcorp_sysinfo.o
+  841  gcc -fPIC -c techcorp_memory.c -o techcorp_memory.o
+  842  gcc -shared -o libtechcorp_sysinfo.so techcorp_sysinfo.o techcorp_memory.o
+  843  echo "" >> ../task5_shared_library.txt
+  844  echo "--- Phase 4: Recompiled library with new function ---" >> ../task5_shared_library.txt
+  845  file libtechcorp_sysinfo.so >> ../task5_shared_library.txt
+  846  cat > sysinfo_test_v2.c << 'EOF'
+#include <stdio.h>
+#include "techcorp_sysinfo.h"
+
+int main(void) {
+    printf("=== TechCorp System Info Report v2 ===\n");
+    printf("Hostname : %s\n", tc_get_hostname());
+    printf("Uptime   : %s\n", tc_get_uptime());
+    printf("CPU Cores: %d\n", tc_get_cpu_count());
+    printf("Memory   : %ld MB\n", tc_get_memory_mb());
+    printf("======================================\n");
+    return 0;
+}
+EOF
+
+  847  echo "" >> ../task5_shared_library.txt
+  848  echo "--- Phase 4: v2 test written ---" >> ../task5_shared_library.txt
+  849  cat sysinfo_test_v2.c >> ../task5_shared_library.txt
+  850  gcc sysinfo_test_v2.c -L. -ltechcorp_sysinfo -o sysinfo_test_v2
+  851  echo "" >> ../task5_shared_library.txt
+  852  echo "--- Phase 4: v2 test run ---" >> ../task5_shared_library.txt
+  853  LD_LIBRARY_PATH=. ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  854  sudo cp libtechcorp_sysinfo.so /usr/local/lib/
+  855  sudo ldconfig
+  856  echo "" >> ../task5_shared_library.txt
+  857  echo "--- System-wide install: ldconfig cache ---" >> ../task5_shared_library.txt
+  858  ldconfig -p | grep techcorp >> ../task5_shared_library.txt
+  859  echo "" >> ../task5_shared_library.txt
+  860  echo "--- System-wide test (no LD_LIBRARY_PATH) ---" >> ../task5_shared_library.txt
+  861  ldd ./sysinfo_test_v2 >> ../task5_shared_library.txt 2>&1
+  862  ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  863  echo "" >> ../task5_shared_library.txt
+  864  echo "--- Pair Information ---" >> ../task5_shared_library.txt
+  865  echo "Role A (Library Author): Nhem Phada - p20240058" >> ../task5_shared_library.txt
+  866  echo "Role B (Test Author): [Partner Name] - [Partner ID]" >> ../task5_shared_library.txt
+  867  cd ..
+  868  cd ~/OS-SE-p20240058/os-lab-p20240058/lab3
+  869  echo "=== Full Command History ===" > task_history.txt
+  870  history | tail -n 100 >> task_history.txt

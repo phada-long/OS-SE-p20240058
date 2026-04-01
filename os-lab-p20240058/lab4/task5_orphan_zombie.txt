@@ -1,0 +1,9 @@
+=== Task 5: Orphan & Zombie Processes ===
+--- Orphan process observation ---
+Child PID: [fill], Original PPID: [fill], New PPID after parent exit: 1
+--- Zombie process observation ---
+Zombie PID: [fill], State: Z (zombie/defunct), Parent PID: [fill]
+--- Zombie and Orphan Cleanup Notes ---
+Q: How are orphans cleaned up? A: They are adopted by init (PID 1) which calls wait() when they exit.
+Q: How are zombies cleaned up? A: When the parent finally calls wait(), or when the parent itself exits and init inherits and cleans them.
+Q: Can you kill a zombie with 'kill -9'? A: No. A zombie is already dead — it has no running code. Only the parent calling wait() cleans it.

@@ -1,1 +1,5 @@
-MINGW64_NT-10.0-26200 DESKTOP-Q2UQQP6 3.6.5-22c95533.x86_64 2025-10-10 12:02 UTC x86_64 Msys
+Linux DESKTOP-Q2UQQP6 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+Distributor ID:	Ubuntu
+Description:	Ubuntu 22.04.5 LTS
+Release:	22.04
+Codename:	jammy

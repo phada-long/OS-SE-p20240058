@@ -1,0 +1,61 @@
+=== my username ===
+phada
+=== installed cron jobs ===
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+# Lab10 heartbeat - runs every minute
+* * * * * date '+\%Y-\%m-\%d \%H:\%M:\%S heartbeat' >> $HOME/os-lab-automation/logs/heartbeat.log 2>&1
+# Lab10 GRADED session job - fires once at 2:30 PM on 2026-06-16 (lab session)
+30 14 16 6 * /home/<phada>/bin/lab_session_job >> /home/<phada>/os-lab-automation/logs/cron_session_job.log 2>&1
+
+# Lab10 GRADED deadline job - fires once at 2:30 PM on 2026-06-22 (before deadline)
+30 14 22 6 * /home/<phada>/bin/deadline_job >> /home/<phada>/os-lab-automation/logs/cron_deadline_job.log 2>&1
+# Lab10 file backup - every 2 minutes (TEST interval)
+*/2 * * * * /home/phada/bin/backup_project >> /home/phada/os-lab-automation/logs/cron_backup.log 2>&1
+=== archives produced by cron ===
+/home/phada/os-lab-automation/backups/project_20260616_133601.tar.gz
+/home/phada/os-lab-automation/backups/project_20260616_132656.tar.gz
+/home/phada/os-lab-automation/backups/project_20260616_132655.tar.gz
+=== backup log (note the new timestamps from cron) ===
+2026-06-16 13:26:53 | starting backup of /home/phada/os-lab-automation/project
+2026-06-16 13:26:53 | created archive /home/phada/os-lab-automation/backups/project_20260616_132653.tar.gz
+2026-06-16 13:26:53 | no old archives to prune
+2026-06-16 13:26:53 | backup finished successfully
+2026-06-16 13:26:54 | starting backup of /home/phada/os-lab-automation/project
+2026-06-16 13:26:54 | created archive /home/phada/os-lab-automation/backups/project_20260616_132654.tar.gz
+2026-06-16 13:26:54 | no old archives to prune
+2026-06-16 13:26:54 | backup finished successfully
+2026-06-16 13:26:55 | starting backup of /home/phada/os-lab-automation/project
+2026-06-16 13:26:55 | created archive /home/phada/os-lab-automation/backups/project_20260616_132655.tar.gz
+2026-06-16 13:26:55 | no old archives to prune
+2026-06-16 13:26:55 | backup finished successfully
+2026-06-16 13:26:56 | starting backup of /home/phada/os-lab-automation/project
+2026-06-16 13:26:56 | created archive /home/phada/os-lab-automation/backups/project_20260616_132656.tar.gz
+2026-06-16 13:26:56 | pruned old archive /home/phada/os-lab-automation/backups/project_20260616_132653.tar.gz
+2026-06-16 13:26:56 | backup finished successfully
+2026-06-16 13:36:01 | starting backup of /home/phada/os-lab-automation/project
+2026-06-16 13:36:01 | created archive /home/phada/os-lab-automation/backups/project_20260616_133601.tar.gz
+2026-06-16 13:36:01 | pruned old archive /home/phada/os-lab-automation/backups/project_20260616_132654.tar.gz
+2026-06-16 13:36:01 | backup finished successfully
+=== captured cron output (empty = clean) ===

@@ -1,0 +1,21 @@
+=== public api permissions ===
+drwxr-x--x 12 phada phada 4096 Jun  2 14:35 /home/phada
+drwxr-xr-x  2 phada phada 4096 Jun  2 14:35 /home/phada/public_api
+total 12
+-rwxr-xr-x 1 phada phada  924 Jun  2 14:35 buy_widget
+-rw-r--rw- 1 phada phada    0 Jun  2 14:35 inventory.lock
+-rw-r--rw- 1 phada phada    2 Jun  2 14:35 inventory.txt
+-rw-r--rw- 1 phada phada 2341 Jun  2 14:35 sales.log
+=== inventory ===
+0
+=== red team sales evidence ===
+[p20240058] [SUCCESS] Bot_46 bought 2 widgets.
+[p20240058] [SUCCESS] Bot_45 bought 2 widgets.
+[p20240058] [SUCCESS] Bot_48 bought 2 widgets.
+[p20240058] [SUCCESS] Bot_47 bought 2 widgets.
+[p20240058] [SUCCESS] Bot_43 bought 2 widgets.
+[p20240058] [SUCCESS] Bot_50 bought 2 widgets.
+[p20240058] [SUCCESS] Bot_44 bought 2 widgets.
+[p20240058] [SUCCESS] Bot_49 bought 2 widgets.
+[p20240058] [SUCCESS] Bot_19 bought 2 widgets.
+[p20240058] [SUCCESS] Bot_42 bought 2 widgets.

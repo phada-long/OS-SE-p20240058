@@ -1,0 +1,8 @@
+=== mailman output ===
+Sent message to phada
+Messages sent: 1
+=== my inbox ===
+total 4
+-rw-r--r-- 1 phada phada 102 May 31 14:49 message_from_phada.txt
+=== messages I received ===
+Hello phada, I am an automated bot written by phada. I successfully read your secret word: scheduler.

@@ -1,0 +1,20 @@
+ 1677  mkdir -p os-class-activities-p20240058/activity2/task1          os-class-activities-p20240058/activity2/task2          os-class-activities-p20240058/activity2/task3_shm          os-class-activities-p20240058/activity2/task4_mq          os-class-activities-p20240058/activity2/screenshots
+ 1678  cd os-class-activities-p20240058/activity2/task1
+ 1679  notepad.exe forkchild.c
+ 1680  gcc -o forkchild forkchild.c
+ 1681  ./forkchild > result_forkchild.txt 2>&1
+ 1682  ps -ef --forest | grep forkchild
+ 1683  history | tail -n 20 > command_used_forkchild.txt
+ 1684  cd /mnt/d/Y2-S2/"Operating Systems"/"Class activity"/class3/os-class-activities-p20240058
+ 1685  ls -la /mnt/d/Y2-S2/"Operating Systems"/"Class activity"
+ 1686  mkdir -p /mnt/d/Y2-S2/"Operating Systems"/"Class activity"/class3
+ 1687  cd /mnt/d/Y2-S2/"Operating Systems"/"Class activity"/class3
+ 1688  mkdir -p activity3/task1_socket          activity3/task2_threads          activity3/task3_java          activity3/screenshots
+ 1689  cd activity3/task1_socket
+ 1690  notepad.exe server.c
+ 1691  nano server.c
+ 1692  nano client.c
+ 1693  gcc -o server server.c
+ 1694  gcc -o client client.c
+ 1695  ./server
+ 1696  history | tail -n 20 > command_used_socket.txt

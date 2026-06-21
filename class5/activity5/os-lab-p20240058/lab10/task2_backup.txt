@@ -1,0 +1,23 @@
+=== backup script permissions ===
+-rwxr-xr-x 1 phada phada 725 Jun 16 13:26 /home/phada/bin/backup_project
+=== archives kept (should be 3) ===
+/home/phada/os-lab-automation/backups/project_20260616_132656.tar.gz
+/home/phada/os-lab-automation/backups/project_20260616_132655.tar.gz
+/home/phada/os-lab-automation/backups/project_20260616_132654.tar.gz
+=== backup log ===
+2026-06-16 13:26:53 | starting backup of /home/phada/os-lab-automation/project
+2026-06-16 13:26:53 | created archive /home/phada/os-lab-automation/backups/project_20260616_132653.tar.gz
+2026-06-16 13:26:53 | no old archives to prune
+2026-06-16 13:26:53 | backup finished successfully
+2026-06-16 13:26:54 | starting backup of /home/phada/os-lab-automation/project
+2026-06-16 13:26:54 | created archive /home/phada/os-lab-automation/backups/project_20260616_132654.tar.gz
+2026-06-16 13:26:54 | no old archives to prune
+2026-06-16 13:26:54 | backup finished successfully
+2026-06-16 13:26:55 | starting backup of /home/phada/os-lab-automation/project
+2026-06-16 13:26:55 | created archive /home/phada/os-lab-automation/backups/project_20260616_132655.tar.gz
+2026-06-16 13:26:55 | no old archives to prune
+2026-06-16 13:26:55 | backup finished successfully
+2026-06-16 13:26:56 | starting backup of /home/phada/os-lab-automation/project
+2026-06-16 13:26:56 | created archive /home/phada/os-lab-automation/backups/project_20260616_132656.tar.gz
+2026-06-16 13:26:56 | pruned old archive /home/phada/os-lab-automation/backups/project_20260616_132653.tar.gz
+2026-06-16 13:26:56 | backup finished successfully

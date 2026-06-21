@@ -1,0 +1,20 @@
+ 1691  #include <string.h>
+ 1692  #include <unistd.h>
+ 1693  #include <arpa/inet.h>
+ 1694  #define PORT 8080
+ 1695  #define BUFFER_SIZE 1024
+ 1696  int main() {
+ 1697  }
+ 1698  cd "/mnt/d/Y2-S2/Operating Systems/Class activity/Class1/OS-SE-p20240058/os-class-activities-p20240058/activity3/task1_socket"
+ 1699  gcc -o server server.c
+ 1700  gcc -o client client.c
+ 1701  # Start server in background
+ 1702  ./server > result_server.txt 2>&1 &
+ 1703  # Give it a moment to initialize
+ 1704  sleep 1
+ 1705  # Run client
+ 1706  ./client > result_client.txt 2>&1
+ 1707  # Combine results
+ 1708  cat result_server.txt result_client.txt > result_socket.txt
+ 1709  # Save history
+ 1710  history | tail -n 20 > command_used_socket.txt

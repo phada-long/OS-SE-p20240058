@@ -1,0 +1,5 @@
+=== warmup permissions ===
+-rwxr-xr-x 1 phada phada 76 May 31 14:37 /home/phada/bin/warmup
+=== warmup output ===
+Hello from my first script! My current directory is:
+/home/phada/bin

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -r -p "Drop zone folder name: " folder
+
+mkdir -p "$HOME/$folder"
+
+chmod o+wx "$HOME/$folder"
+chmod +t "$HOME/$folder"
+
+ls -ld "$HOME/$folder"

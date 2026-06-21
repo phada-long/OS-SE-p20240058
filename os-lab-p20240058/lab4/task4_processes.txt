@@ -1,0 +1,157 @@
+=== Task 4: Process Management ===
+--- Current processes (your user) ---
+    PID TTY          TIME CMD
+      1 ?        00:00:01 systemd
+      2 ?        00:00:00 init-systemd(Ub
+      7 ?        00:00:00 init
+     61 ?        00:00:00 systemd-journal
+     87 ?        00:00:06 systemd-udevd
+    182 ?        00:00:00 networkd-dispat
+    200 ?        00:00:00 systemd-logind
+    233 ?        00:00:00 unattended-upgr
+    298 ?        00:00:00 SessionLeader
+    299 ?        00:00:00 Relay(300)
+    300 pts/0    00:00:00 bash
+    301 pts/1    00:00:00 login
+    332 ?        00:00:00 systemd
+    333 ?        00:00:00 (sd-pam)
+    344 pts/1    00:00:00 bash
+    954 ?        00:00:00 packagekitd
+    958 ?        00:00:00 polkitd
+   1188 ?        00:00:00 cron
+   4464 hvc0     00:00:00 agetty
+   4465 tty1     00:00:00 agetty
+   4813 ?        00:00:00 SessionLeader
+   4815 ?        00:00:00 Relay(4820)
+   4820 pts/2    00:00:00 bash
+   4999 pts/2    00:00:00 ps
+--- All processes (snapshot) ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1 165596 10752 ?        Ss   14:39   0:01 /lib/systemd/systemd --system --deserialize 22
+root           2  0.0  0.0   3120  1920 ?        Sl   14:39   0:00 /init
+root           7  0.0  0.0   3136  1824 ?        Sl   14:39   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          61  0.0  0.1  47824 14720 ?        S<s  14:39   0:00 /lib/systemd/systemd-journald
+root          87  0.0  0.0  22844  5760 ?        Ss   14:39   0:06 /lib/systemd/systemd-udevd
+systemd+      90  0.0  0.1  25672 12772 ?        Ss   14:39   0:00 /lib/systemd/systemd-resolved
+systemd+      91  0.0  0.0  89364  7040 ?        Ssl  14:39   0:00 /lib/systemd/systemd-timesyncd
+message+     167  0.0  0.0   8588  4224 ?        Ss   14:39   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         182  0.0  0.2  30136 18176 ?        Ss   14:39   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+syslog       190  0.0  0.0 222404  4864 ?        Ssl  14:39   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         200  0.0  0.0  15324  7424 ?        Ss   14:39   0:00 /lib/systemd/systemd-logind
+root         233  0.0  0.2 107164 21248 ?        Ssl  14:39   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         298  0.0  0.0   3136   900 ?        Ss   14:39   0:00 /init
+root         299  0.0  0.0   3136  1164 ?        S    14:39   0:00 /init
+root         300  0.0  0.0   6364  5120 pts/0    Ss+  14:39   0:00 -bash
+root         301  0.0  0.0   7476  4864 pts/1    Ss   14:39   0:00 /bin/login -f
+root         332  0.0  0.1  17048  9344 ?        Ss   14:39   0:00 /lib/systemd/systemd --user
+root         333  0.0  0.0 168964  4972 ?        S    14:39   0:00 (sd-pam)
+root         344  0.0  0.0   6104  4992 pts/1    S+   14:39   0:00 -bash
+--- Process tree ---
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 14:39 ?        00:00:01 /lib/systemd/systemd --system --deserialize 22
+root           2       1  0 14:39 ?        00:00:00 /init
+root           7       2  0 14:39 ?        00:00:00  \_ plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root         298       2  0 14:39 ?        00:00:00  \_ /init
+root         299     298  0 14:39 ?        00:00:00  |   \_ /init
+root         300     299  0 14:39 pts/0    00:00:00  |       \_ -bash
+root         301       2  0 14:39 pts/1    00:00:00  \_ /bin/login -f
+root         344     301  0 14:39 pts/1    00:00:00  |   \_ -bash
+root        4813       2  0 21:11 ?        00:00:00  \_ /init
+root        4815    4813  0 21:11 ?        00:00:00      \_ /init
+root        4820    4815  0 21:11 pts/2    00:00:00          \_ -bash
+root        5002    4820  0 21:14 pts/2    00:00:00              \_ ps -ef --forest
+root        5003    4820  0 21:14 pts/2    00:00:00              \_ head -n 30
+root          61       1  0 14:39 ?        00:00:00 /lib/systemd/systemd-journald
+root          87       1  0 14:39 ?        00:00:06 /lib/systemd/systemd-udevd
+systemd+      90       1  0 14:39 ?        00:00:00 /lib/systemd/systemd-resolved
+systemd+      91       1  0 14:39 ?        00:00:00 /lib/systemd/systemd-timesyncd
+message+     167       1  0 14:39 ?        00:00:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         182       1  0 14:39 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+syslog       190       1  0 14:39 ?        00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root         200       1  0 14:39 ?        00:00:00 /lib/systemd/systemd-logind
+root         233       1  0 14:39 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         332       1  0 14:39 ?        00:00:00 /lib/systemd/systemd --user
+root         333     332  0 14:39 ?        00:00:00  \_ (sd-pam)
+root         954       1  0 14:52 ?        00:00:00 /usr/libexec/packagekitd
+root         958       1  0 14:52 ?        00:00:00 /usr/libexec/polkitd --no-debug
+root        1188       1  0 14:53 ?        00:00:00 /usr/sbin/cron -f -P
+root        4464       1  0 20:05 hvc0     00:00:00 /sbin/agetty -o -p -- \u --noclear --keep-baud console 115200,38400,9600 vt220
+root        4465       1  0 20:05 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+--- Background jobs ---
+[1]-  5033 Running                 sleep 300 &
+[2]+  5034 Running                 sleep 500 &
+--- After Ctrl+Z (stopped job) ---
+[1]   5033 Running                 sleep 300 &
+[2]-  5034 Running                 sleep 500 &
+[3]+  5035 Stopped                 sleep 600
+--- After bg (resumed in background) ---
+[1]   5033 Running                 sleep 300 &
+[2]-  5034 Running                 sleep 500 &
+[3]+  5035 Stopped                 sleep 600
+--- After terminating all sleep jobs ---
+[2]-  5034 Running                 sleep 500 &
+[3]+  5035 Stopped                 sleep 600
+Started sleep with PID: 5036
+--- Available signals ---
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) SIGXCPU	25) SIGXFSZ
+26) SIGVTALRM	27) SIGPROF	28) SIGWINCH	29) SIGIO	30) SIGPWR
+31) SIGSYS	34) SIGRTMIN	35) SIGRTMIN+1	36) SIGRTMIN+2	37) SIGRTMIN+3
+38) SIGRTMIN+4	39) SIGRTMIN+5	40) SIGRTMIN+6	41) SIGRTMIN+7	42) SIGRTMIN+8
+43) SIGRTMIN+9	44) SIGRTMIN+10	45) SIGRTMIN+11	46) SIGRTMIN+12	47) SIGRTMIN+13
+48) SIGRTMIN+14	49) SIGRTMIN+15	50) SIGRTMAX-14	51) SIGRTMAX-13	52) SIGRTMAX-12
+53) SIGRTMAX-11	54) SIGRTMAX-10	55) SIGRTMAX-9	56) SIGRTMAX-8	57) SIGRTMAX-7
+58) SIGRTMAX-6	59) SIGRTMAX-5	60) SIGRTMAX-4	61) SIGRTMAX-3	62) SIGRTMAX-2
+63) SIGRTMAX-1	64) SIGRTMAX	
+--- After SIGSTOP ---
+    PID STAT CMD
+   5036 T    sleep 1000
+--- After SIGCONT ---
+    PID STAT CMD
+   5036 S    sleep 1000
+--- After SIGTERM ---
+    PID STAT CMD
+--- nohup demo ---
+nohup sleep PID: 5042
+ls: cannot access 'nohup.out': No such file or directory
+--- Challenge Process Management ---
+    PID TTY          TIME CMD
+      1 ?        00:00:01 systemd
+      2 ?        00:00:00 init-systemd(Ub
+      7 ?        00:00:00  \_ init
+    298 ?        00:00:00  \_ SessionLeader
+    299 ?        00:00:00  |   \_ Relay(300)
+    300 pts/0    00:00:00  |       \_ bash
+    301 pts/1    00:00:00  \_ login
+    344 pts/1    00:00:00  |   \_ bash
+   4813 ?        00:00:00  \_ SessionLeader
+   4815 ?        00:00:00      \_ Relay(4820)
+   4820 pts/2    00:00:00          \_ bash
+   5035 pts/2    00:00:00              \_ sleep
+   5046 pts/2    00:00:00              \_ sleep
+   5047 pts/2    00:00:00              \_ sleep
+   5048 pts/2    00:00:00              \_ sleep
+   5049 pts/2    00:00:00              \_ ps
+     61 ?        00:00:00 systemd-journal
+     87 ?        00:00:06 systemd-udevd
+   5044 ?        00:00:00  \_ systemd-udevd
+   5045 ?        00:00:00  \_ systemd-udevd
+    182 ?        00:00:00 networkd-dispat
+    200 ?        00:00:00 systemd-logind
+    233 ?        00:00:00 unattended-upgr
+    332 ?        00:00:00 systemd
+    333 ?        00:00:00  \_ (sd-pam)
+    954 ?        00:00:00 packagekitd
+    958 ?        00:00:00 polkitd
+   1188 ?        00:00:00 cron
+   4464 hvc0     00:00:00 agetty
+   4465 tty1     00:00:00 agetty
+300
+344
+4820
+300
+344
+4820

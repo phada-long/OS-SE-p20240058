@@ -1,0 +1,6 @@
+=== missing argument test ===
+Usage: buy_widget <username> <quantity>
+=== invalid quantity test ===
+Error: quantity must be a positive integer.
+=== script permissions ===
+-rwxr-xr-x 1 phada phada 278 Jun  2 14:22 /home/phada/bin/buy_widget

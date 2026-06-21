@@ -1,0 +1,10 @@
+total 24
+drwxrwxrwx 1 phada phada   512 Jun 21 14:24 .
+drwxrwxrwx 1 phada phada   512 Jun 21 14:17 ..
+-rwxrwxrwx 1 phada phada 16400 Jun 21 14:24 forkchild
+-rwxrwxrwx 1 phada phada  1275 Jun 21 14:24 forkchild.c
+-rwxrwxrwx 1 phada phada     0 Jun 21 14:24 result_forkchild.txt
+Parent process (PID: 619) — creating child...
+Parent: waiting for child (PID: 620) to finish...
+Parent: child exited with status 0
+Parent: done.

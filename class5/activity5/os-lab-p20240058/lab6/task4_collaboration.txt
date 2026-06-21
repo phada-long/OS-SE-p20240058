@@ -1,0 +1,11 @@
+=== Dev Zone Files ===
+total 8
+drwxrws--- 2 root      devteam 4096 May 26 16:11 .
+drwxr-xr-x 4 root      root    4096 May 26 16:10 ..
+-rw-rw-r-- 1 dev_alice devteam    0 May 26 16:11 alice_code.py
+-rw-rw-r-- 1 dev_bob   devteam    0 May 26 16:11 bob_patch.py
+=== Audit Vault Files ===
+total 8
+drwxrws--- 2 root      auditors 4096 May 26 16:11 .
+drwxr-xr-x 4 root      root     4096 May 26 16:10 ..
+-rw-rw-r-- 1 dev_alice auditors    0 May 26 16:11 alice_audit.log

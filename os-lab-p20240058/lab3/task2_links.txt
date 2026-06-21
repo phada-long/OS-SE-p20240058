@@ -1,0 +1,86 @@
+=== Task 2: Hard Links and Symbolic Links ===
+--- Original file ---
+50858 -rw-r--r-- 1 root root 35 Mar 31 14:27 config_original.txt
+TechCorp Global Configuration v3.1
+
+--- After creating hard link ---
+50858 -rw-r--r-- 2 root root 35 Mar 31 14:27 config_hardlink.txt
+50858 -rw-r--r-- 2 root root 35 Mar 31 14:27 config_original.txt
+
+--- After creating symbolic link ---
+50858 -rw-r--r-- 2 root root 35 Mar 31 14:27 config_hardlink.txt
+50858 -rw-r--r-- 2 root root 35 Mar 31 14:27 config_original.txt
+50859 lrwxrwxrwx 1 root root 19 Mar 31 14:28 config_symlink.txt -> config_original.txt
+
+--- Content via hard link ---
+TechCorp Global Configuration v3.1
+--- Content via symbolic link ---
+TechCorp Global Configuration v3.1
+
+--- After modifying original ---
+Hard link content:
+TechCorp Global Configuration v3.1
+Updated: New security patch applied.
+Symlink content:
+TechCorp Global Configuration v3.1
+Updated: New security patch applied.
+
+--- After deleting original file ---
+Hard link still works:
+TechCorp Global Configuration v3.1
+Updated: New security patch applied.
+Symlink is broken:
+cat: config_symlink.txt: No such file or directory
+50858 -rw-r--r-- 1 root root 72 Mar 31 14:28 config_hardlink.txt
+50859 lrwxrwxrwx 1 root root 19 Mar 31 14:28 config_symlink.txt -> config_original.txt
+
+--- stat on hard link ---
+  File: config_hardlink.txt
+  Size: 72        	Blocks: 8          IO Block: 4096   regular file
+Device: 840h/2112d	Inode: 50858       Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2026-03-31 14:29:06.485931049 +0700
+Modify: 2026-03-31 14:28:59.036071360 +0700
+Change: 2026-03-31 14:29:06.485931049 +0700
+ Birth: 2026-03-31 14:27:50.419947201 +0700
+--- readlink on symlink ---
+config_original.txt
+
+--- Symlink to directory ---
+lrwxrwxrwx 1 root root 17 Mar 31 14:29 web_shortcut -> projects/frontend
+index.html
+
+--- Real-world symlinks in /usr/bin ---
+lrwxrwxrwx 1 root root      10 Aug  8  2024 /usr/bin/python3 -> python3.10
+-rwxr-xr-x 1 root root 5941832 Nov  7  2024 /usr/bin/python3.10
+lrwxrwxrwx 1 root root 24 Jan  7  2025 /usr/bin/editor -> /etc/alternatives/editor
+--- Symlinks in /etc/alternatives ---
+total 12
+drwxr-xr-x  2 root root 4096 Jan  7  2025 .
+drwxr-xr-x 81 root root 4096 Mar 31 14:25 ..
+-rw-r--r--  1 root root  100 Apr  6  2022 README
+lrwxrwxrwx  1 root root   23 Jan  7  2025 arptables -> /usr/sbin/arptables-nft
+lrwxrwxrwx  1 root root   31 Jan  7  2025 arptables-restore -> /usr/sbin/arptables-nft-restore
+lrwxrwxrwx  1 root root   28 Jan  7  2025 arptables-save -> /usr/sbin/arptables-nft-save
+lrwxrwxrwx  1 root root   13 Jan  7  2025 awk -> /usr/bin/gawk
+lrwxrwxrwx  1 root root   29 Jan  7  2025 awk.1.gz -> /usr/share/man/man1/gawk.1.gz
+lrwxrwxrwx  1 root root   38 Jan  7  2025 builtins.7.gz -> /usr/share/man/man7/bash-builtins.7.gz
+lrwxrwxrwx  1 root root   22 Jan  7  2025 ebtables -> /usr/sbin/ebtables-nft
+lrwxrwxrwx  1 root root   30 Jan  7  2025 ebtables-restore -> /usr/sbin/ebtables-nft-restore
+lrwxrwxrwx  1 root root   27 Jan  7  2025 ebtables-save -> /usr/sbin/ebtables-nft-save
+lrwxrwxrwx  1 root root    9 Jan  7  2025 editor -> /bin/nano
+lrwxrwxrwx  1 root root   29 Jan  7  2025 editor.1.gz -> /usr/share/man/man1/nano.1.gz
+lrwxrwxrwx  1 root root   18 Jan  7  2025 ex -> /usr/bin/vim.basic
+lrwxrwxrwx  1 root root   28 Jan  7  2025 ex.1.gz -> /usr/share/man/man1/vim.1.gz
+lrwxrwxrwx  1 root root   31 Jan  7  2025 ex.da.1.gz -> /usr/share/man/da/man1/vim.1.gz
+lrwxrwxrwx  1 root root   31 Jan  7  2025 ex.de.1.gz -> /usr/share/man/de/man1/vim.1.gz
+lrwxrwxrwx  1 root root   31 Jan  7  2025 ex.fr.1.gz -> /usr/share/man/fr/man1/vim.1.gz
+--- Challenge Links ---
+50867 -rw-r--r-- 2 root root 35 Mar 31 14:20 eng_data.txt
+50867 -rw-r--r-- 2 root root 35 Mar 31 14:20 hr_data.txt
+50861 -rw-r--r-- 1 root root 35 Mar 31 14:29 shared_data.txt
+index.html
+Shared resource across departments
+Shared resource across departments
+50867 -rw-r--r-- 2 root root 35 Mar 31 14:20 eng_data.txt
+50867 -rw-r--r-- 2 root root 35 Mar 31 14:20 hr_data.txt

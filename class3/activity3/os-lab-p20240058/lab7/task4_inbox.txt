@@ -1,0 +1,4 @@
+=== inbox permissions ===
+drwx-wx-wx 2 phada phada 4096 May 31 14:41 /home/phada/public_inbox
+=== inbox files as owner ===
+total 0

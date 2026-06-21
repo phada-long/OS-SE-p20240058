@@ -1,0 +1,3 @@
+dev_alice : dev_alice devteam
+uid=1019(dev_bob) gid=1019(dev_bob) groups=1019(dev_bob),1020(devteam)
+devteam:x:1020:dev_alice,dev_bob

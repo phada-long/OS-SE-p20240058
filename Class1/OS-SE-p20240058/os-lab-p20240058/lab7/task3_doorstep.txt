@@ -1,0 +1,6 @@
+========================================
+Welcome, phada
+Users currently logged in: 1
+Server uptime: up 27 minutes
+Random tech quote: Automate the boring stuff.
+========================================

@@ -1,0 +1,20 @@
+ 1672  mkdir -p os-class-activities-p20240058/activity2/task2
+ 1673  mkdir -p os-class-activities-p20240058/activity2/task3_shm
+ 1674  mkdir -p os-class-activities-p20240058/activity2/task4_mq
+ 1675  mkdir -p os-class-activities-p20240058/activity2/screenshots
+ 1676  cd os-class-activities-p20240058/activity2/task1
+ 1677  notepad.exe forkchild.c
+ 1678  gcc -o forkchild forkchild.c
+ 1679  ./forkchild > result_forkchild.txt 2>&1
+ 1680  gcc -o forkchild forkchild.c
+ 1681  ./forkchild > result_forkchild.txt 2>&1
+ 1682  gcc -o forkchild forkchild.c
+ 1683  ./forkchild > result_forkchild.txt 2>&1
+ 1684  cd /mnt/d/Y2-S2/Operating\ Systems/Class\ activity/class2
+ 1685  mkdir -p os-class-activities-p20240058/activity2/task1          os-class-activities-p20240058/activity2/task2          os-class-activities-p20240058/activity2/task3_shm          os-class-activities-p20240058/activity2/task4_mq          os-class-activities-p20240058/activity2/screenshots
+ 1686  cd os-class-activities-p20240058/activity2/task1
+ 1687  notepad.exe forkchild.c
+ 1688  gcc -o forkchild forkchild.c
+ 1689  ./forkchild > result_forkchild.txt 2>&1
+ 1690  ps -ef --forest | grep forkchild
+ 1691  history | tail -n 20 > command_used_forkchild.txt

@@ -1,0 +1,11 @@
+=== script permissions ===
+-rwxr-xr-x 1 phada phada 405 Jun 16 13:18 /home/phada/bin/automation_demo
+=== log contents ===
+2026-06-16 13:18:35 | automation_demo started by user phada
+2026-06-16 13:18:35 | working directory is /home/phada/os-se-p20240058/os-lab-p20240058/lab10
+2026-06-16 13:18:35 | home directory is /home/phada
+2026-06-16 13:18:35 | automation_demo finished successfully
+2026-06-16 13:18:35 | automation_demo started by user phada
+2026-06-16 13:18:35 | working directory is /home/phada/os-se-p20240058/os-lab-p20240058/lab10
+2026-06-16 13:18:35 | home directory is /home/phada
+2026-06-16 13:18:35 | automation_demo finished successfully

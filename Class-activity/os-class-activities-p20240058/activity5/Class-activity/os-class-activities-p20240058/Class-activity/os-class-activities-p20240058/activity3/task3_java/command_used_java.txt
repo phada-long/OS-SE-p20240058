@@ -1,0 +1,30 @@
+ 1684  cd /mnt/d/Y2-S2/"Operating Systems"/"Class activity"/class3/os-class-activities-p20240058
+ 1685  ls -la /mnt/d/Y2-S2/"Operating Systems"/"Class activity"
+ 1686  mkdir -p /mnt/d/Y2-S2/"Operating Systems"/"Class activity"/class3
+ 1687  cd /mnt/d/Y2-S2/"Operating Systems"/"Class activity"/class3
+ 1688  mkdir -p activity3/task1_socket          activity3/task2_threads          activity3/task3_java          activity3/screenshots
+ 1689  cd activity3/task1_socket
+ 1690  notepad.exe server.c
+ 1691  nano server.c
+ 1692  nano client.c
+ 1693  gcc -o server server.c
+ 1694  gcc -o client client.c
+ 1695  ./server
+ 1696  history | tail -n 20 > command_used_socket.txt
+ 1697  cd ../task2_threads
+ 1698  nano threads.c
+ 1699  nano threads_mutex.c
+ 1700  gcc -o threads threads.c -pthread
+ 1701  gcc -o threads_mutex threads_mutex.c -pthread
+ 1702  ./threads
+ 1703  ./threads_mutex
+ 1704  history | tail -n 20 > command_used_threads.txt
+ 1705  cd ../task3_java
+ 1706  nano ThreadDemo.java
+ 1707  nano RunnableDemo.java
+ 1708  nano PoolDemo.java
+ 1709  javac ThreadDemo.java RunnableDemo.java PoolDemo.java
+ 1710  java ThreadDemo
+ 1711  java RunnableDemo
+ 1712  java PoolDemo
+ 1713  history | tail -n 30 > command_used_java.txt

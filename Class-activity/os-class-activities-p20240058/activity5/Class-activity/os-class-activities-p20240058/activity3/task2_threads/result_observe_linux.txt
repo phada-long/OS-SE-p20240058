@@ -1,0 +1,18 @@
+phada       1190     312    1190  0    5 14:47 pts/0    00:00:00 ./threads_observe
+phada       1190     312    1191  0    5 14:47 pts/0    00:00:00 ./threads_observe
+phada       1190     312    1192  0    5 14:47 pts/0    00:00:00 ./threads_observe
+phada       1190     312    1193  0    5 14:47 pts/0    00:00:00 ./threads_observe
+phada       1190     312    1194  0    5 14:47 pts/0    00:00:00 ./threads_observe
+phada       1198     312    1198  0    1 14:48 pts/0    00:00:00 grep --color=auto threads_observe
+    PID    SPID TTY          TIME CMD
+   1190    1190 pts/0    00:00:00 threads_observe
+   1190    1191 pts/0    00:00:00 threads_observe
+   1190    1192 pts/0    00:00:00 threads_observe
+   1190    1193 pts/0    00:00:00 threads_observe
+   1190    1194 pts/0    00:00:00 threads_observe
+--- /proc/1190/task/ list ---
+1190
+1191
+1192
+1193
+1194

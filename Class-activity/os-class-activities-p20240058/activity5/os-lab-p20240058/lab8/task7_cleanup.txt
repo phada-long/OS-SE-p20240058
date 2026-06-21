@@ -1,0 +1,14 @@
+/home/phada/forensic_cleanup:
+csv
+log
+note
+tmp
+
+/home/phada/forensic_cleanup/csv:
+data.csv
+
+/home/phada/forensic_cleanup/log:
+test.log
+
+/home/phada/forensic_cleanup/tmp:
+error.tmp

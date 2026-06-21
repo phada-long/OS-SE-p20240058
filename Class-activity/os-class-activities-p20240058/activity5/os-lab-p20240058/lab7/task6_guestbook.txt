@@ -1,0 +1,6 @@
+=== guestbook permissions ===
+-rw------- 1 phada phada 26 May 31 14:45 /home/phada/guestbook.txt
+=== sign_book permissions ===
+-rwsr-xr-x 1 phada phada 16096 May 31 14:44 /home/phada/bin/sign_book
+=== guestbook contents ===
+Visitor signed: Test User

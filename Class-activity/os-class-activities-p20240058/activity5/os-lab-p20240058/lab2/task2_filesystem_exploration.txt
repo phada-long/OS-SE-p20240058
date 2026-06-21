@@ -1,0 +1,224 @@
+/
+total 2804
+drwxr-xr-x  22 root root    4096 Mar 27 09:55 .
+drwxr-xr-x  22 root root    4096 Mar 27 09:55 ..
+lrwxrwxrwx   1 root root       7 Apr 22  2024 bin -> usr/bin
+drwxr-xr-x   2 root root    4096 Feb 26  2024 bin.usr-is-merged
+drwxr-xr-x   2 root root    4096 Apr 22  2024 boot
+drwxr-xr-x  15 root root    3860 Mar 27 09:55 dev
+drwxr-xr-x  87 root root    4096 Mar 27 09:55 etc
+drwxr-xr-x   2 root root    4096 Apr 22  2024 home
+-rwxr-xr-x   1 root root 2781568 Dec 12 08:58 init
+lrwxrwxrwx   1 root root       7 Apr 22  2024 lib -> usr/lib
+drwxr-xr-x   2 root root    4096 Apr  8  2024 lib.usr-is-merged
+lrwxrwxrwx   1 root root       9 Apr 22  2024 lib64 -> usr/lib64
+drwx------   2 root root   16384 Mar 19 15:59 lost+found
+drwxr-xr-x   2 root root    4096 Jan  7  2025 media
+drwxr-xr-x   6 root root    4096 Mar 27 09:55 mnt
+drwxr-xr-x   2 root root    4096 Jan  7  2025 opt
+dr-xr-xr-x 270 root root       0 Mar 27 09:55 proc
+drwx------   6 root root    4096 Mar 27 09:56 root
+drwxr-xr-x  19 root root     580 Mar 27 09:55 run
+lrwxrwxrwx   1 root root       8 Apr 22  2024 sbin -> usr/sbin
+drwxr-xr-x   2 root root    4096 Mar 31  2024 sbin.usr-is-merged
+drwxr-xr-x   2 root root    4096 Mar 27 09:55 snap
+drwxr-xr-x   2 root root    4096 Jan  7  2025 srv
+dr-xr-xr-x  13 root root       0 Mar 27 09:55 sys
+drwxrwxrwt   8 root root    4096 Mar 27 09:55 tmp
+drwxr-xr-x  12 root root    4096 Jan  7  2025 usr
+drwxr-xr-x  13 root root    4096 Mar 27 09:55 var
+--- /etc ---
+/etc
+PackageKit
+X11
+adduser.conf
+alternatives
+apparmor
+apparmor.d
+apport
+apt
+bash.bashrc
+bash_completion
+bash_completion.d
+bindresvport.blacklist
+binfmt.d
+byobu
+ca-certificates
+ca-certificates.conf
+cloud
+console-setup
+credstore
+credstore.encrypted
+cron.d
+cron.daily
+cron.hourly
+cron.monthly
+cron.weekly
+cron.yearly
+crontab
+dbus-1
+dconf
+debconf.conf
+debian_version
+default
+deluser.conf
+depmod.d
+dhcp
+dhcpcd.conf
+dpkg
+e2scrub.conf
+environment
+environment.d
+ethertypes
+fonts
+fstab
+fuse.conf
+gai.conf
+glvnd
+gnutls
+gprofng.rc
+groff
+group
+gshadow
+gss
+gtk-3.0
+host.conf
+hostname
+hosts
+init.d
+inputrc
+iproute2
+issue
+issue.net
+kernel
+landscape
+ld.so.cache
+ld.so.conf
+ld.so.conf.d
+ldap
+legal
+libaudit.conf
+locale.alias
+locale.conf
+locale.gen
+localtime
+logcheck
+login.defs
+logrotate.conf
+logrotate.d
+lsb-release
+machine-id
+magic
+magic.mime
+manpath.config
+mime.types
+mke2fs.conf
+modprobe.d
+modules
+modules-load.d
+mtab
+nanorc
+netconfig
+netplan
+networkd-dispatcher
+networks
+newt
+nsswitch.conf
+opt
+os-release
+pam.conf
+pam.d
+passwd
+perl
+pm
+polkit-1
+profile
+profile.d
+protocols
+python3
+python3.12
+rc0.d
+rc1.d
+rc2.d
+rc3.d
+rc4.d
+rc5.d
+rc6.d
+rcS.d
+resolv.conf
+rmt
+rpc
+rsyslog.conf
+rsyslog.d
+security
+selinux
+sensors.d
+sensors3.conf
+services
+sgml
+shadow
+shells
+skel
+ssh
+ssl
+subgid
+subuid
+sudo.conf
+sudo_logsrvd.conf
+sudoers
+sudoers.d
+supercat
+sysctl.conf
+sysctl.d
+systemd
+terminfo
+timezone
+tmpfiles.d
+ubuntu-advantage
+ucf.conf
+udev
+update-manager
+update-motd.d
+vconsole.conf
+vim
+vtrgb
+vulkan
+wgetrc
+wsl.conf
+xattr.conf
+xdg
+xml
+zsh_command_not_found
+--- /var ---
+/var
+backups
+cache
+crash
+lib
+local
+lock
+log
+mail
+opt
+run
+snap
+spool
+tmp
+--- /home ---
+/home
+total 8
+drwxr-xr-x  2 root root 4096 Apr 22  2024 .
+drwxr-xr-x 22 root root 4096 Mar 27 09:55 ..
+--- /tmp ---
+/tmp
+total 28
+drwxrwxrwt  8 root root 4096 Mar 27 09:55 .
+drwxr-xr-x 22 root root 4096 Mar 27 09:55 ..
+drwxrwxrwx  2 root root   60 Mar 27 09:55 .X11-unix
+drwx------  2 root root 4096 Mar 27 09:55 snap-private-tmp
+drwx------  3 root root 4096 Mar 27 09:55 systemd-private-f002dafd54364fbbaaa8b7f3732f9208-systemd-logind.service-ajblPz
+drwx------  3 root root 4096 Mar 27 09:55 systemd-private-f002dafd54364fbbaaa8b7f3732f9208-systemd-resolved.service-gas342
+drwx------  3 root root 4096 Mar 27 09:55 systemd-private-f002dafd54364fbbaaa8b7f3732f9208-systemd-timesyncd.service-FPcNrV
+drwx------  3 root root 4096 Mar 27 09:55 systemd-private-f002dafd54364fbbaaa8b7f3732f9208-wsl-pro.service-eZ0NxZ
+--- Home (~) ---
+/root

@@ -1,0 +1,15 @@
+Run 1 final inventory: 70
+
+Run 2 final inventory: 74
+
+Run 3 final inventory: 84
+
+Run 4 final inventory: 68
+
+Run 5 final inventory: 72
+
+Explanation:
+
+The final inventory changed between runs because multiple buy_widget processes accessed inventory.txt at the same time. Several processes could read the same inventory value before another process updated the file. As a result, some updates overwrote others, causing inconsistent inventory values.
+
+This is a Time-of-Check to Time-of-Use (TOC-TOU) race condition. The exact outcome depends on operating system scheduling because concurrent processes may execute in a different order each time.

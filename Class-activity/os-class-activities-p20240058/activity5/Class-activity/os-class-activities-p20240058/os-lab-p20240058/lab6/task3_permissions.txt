@@ -1,0 +1,5 @@
+total 16
+drwxr-xr-x  4 root root     4096 May 26 16:10 .
+drwxr-xr-x 23 root root     4096 May 26 16:10 ..
+drwxrws---  2 root auditors 4096 May 26 16:10 audit_vault
+drwxrws---  2 root devteam  4096 May 26 16:10 dev_zone

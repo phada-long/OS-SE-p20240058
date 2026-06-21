@@ -1,0 +1,46 @@
+#!/bin/bash
+
+username="$1"
+quantity="$2"
+
+student_id="p20240058"
+
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+inventory_file="$script_dir/inventory.txt"
+sales_log="$script_dir/sales.log"
+lock_file="$script_dir/inventory.lock"
+
+log_transaction() {
+    echo "[$student_id] [SUCCESS] $username bought $quantity widgets." >> "$sales_log"
+}
+
+if [ "$#" -ne 2 ]; then
+    echo "Usage: buy_widget <username> <quantity>"
+    exit 1
+fi
+
+if ! [[ "$quantity" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Error: quantity must be a positive integer."
+    exit 2
+fi
+
+(
+    flock -x 200
+
+    inventory=$(cat "$inventory_file")
+
+    if [ "$quantity" -le "$inventory" ]; then
+
+        new_inventory=$((inventory - quantity))
+
+        echo "$new_inventory" > "$inventory_file"
+
+        log_transaction
+
+        echo "Transaction Successful!"
+    else
+        echo "Transaction Failed: Not enough inventory!"
+    fi
+
+) 200> "$lock_file"

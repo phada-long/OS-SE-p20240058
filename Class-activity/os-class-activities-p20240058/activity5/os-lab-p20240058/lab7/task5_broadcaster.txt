@@ -1,0 +1,6 @@
+=== broadcaster script ===
+-rwxr-xr-x 1 phada phada 335 May 31 14:42 /home/phada/bin/broadcaster
+=== outbox permissions ===
+drwxr-xr-x 2 phada phada 4096 May 31 14:42 /home/phada/public_outbox
+=== secret.txt ===
+scheduler - 2026-05-31 14:42:23

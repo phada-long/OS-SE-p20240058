@@ -1,0 +1,12 @@
+=== my automation script ===
+#!/bin/bash
+set -euo pipefail
+
+base="$HOME/os-lab-automation"
+logfile="$base/logs/my_automation.log"
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') | system load metric: $(uptime | awk -F'load average:' '{print $2}')" >> "$logfile"
+=== my cron line ===
+*/2 * * * * /home/phada/bin/my_automation >> /home/phada/os-lab-automation/logs/cron_my_automation.log 2>&1
+=== output produced on schedule ===
+2026-06-16 13:43:58 | system load metric:  0.00, 0.00, 0.00

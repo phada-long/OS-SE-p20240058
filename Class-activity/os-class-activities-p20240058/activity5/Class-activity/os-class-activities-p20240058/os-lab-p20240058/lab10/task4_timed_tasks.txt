@@ -1,0 +1,10 @@
+=== graded job scripts ===
+-rwxr-xr-x 1 phada phada 226 Jun 16 13:47 /home/phada/bin/deadline_job
+-rwxr-xr-x 1 phada phada 224 Jun 16 13:47 /home/phada/bin/lab_session_job
+=== graded cron jobs installed ===
+# Lab10 GRADED session job - fires once at 2:30 PM on 2026-06-16 (lab session)
+# Lab10 GRADED deadline job - fires once at 2:30 PM on 2026-06-22 (before deadline)
+=== session job output (filled at 2:30 PM) ===
+SESSION_JOB_OK | 2026-06-16 13:30:24 | user=phada | host=DESKTOP-Q2UQQP6
+=== deadline job output (empty until 2026-06-22) ===
+DEADLINE_JOB_OK | 2026-06-16 13:30:24 | user=phada | host=DESKTOP-Q2UQQP6

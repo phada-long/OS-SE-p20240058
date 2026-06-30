@@ -1,0 +1,4 @@
+Run 1 final stock: -1
+Run 2 final stock: -1
+Run 3 final stock: 86
+Patched final stock: 50

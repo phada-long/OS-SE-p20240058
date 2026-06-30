@@ -1,0 +1,11 @@
+#!/bin/bash
+messages=("Stay sharp, QuantumTech engineer." "Beacon launch is close — ship it clean." "Uptime is everything today.")
+current_user=$(whoami)
+logged_in=$(who | wc -l)
+sys_uptime=$(uptime -p)
+rand_index=$((RANDOM % ${#messages[@]}))
+echo "=== QuantumTech Ops Banner ==="
+echo "User: $current_user"
+echo "Logged-in users: $logged_in"
+echo "Uptime: $sys_uptime"
+echo "Message: ${messages[$rand_index]}"

@@ -1,0 +1,9 @@
+#!/bin/bash
+EXAM_DIR="$HOME/os-se-p20240058/final-exam"
+BACKUP_DIR="$HOME/exam-backups"
+mkdir -p "$BACKUP_DIR"
+ts=$(date '+%Y%m%d_%H%M%S')
+archive="$BACKUP_DIR/final-exam-$ts.tar.gz"
+tar -czf "$archive" -C "$HOME/os-se-p20240058" final-exam 2>/dev/null
+echo "$(date '+%Y-%m-%d %H:%M:%S') | backed up final-exam to $archive" >> "$BACKUP_DIR/backup_exam.log"
+echo "Backup complete: $archive"

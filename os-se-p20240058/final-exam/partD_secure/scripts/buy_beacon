@@ -1,0 +1,33 @@
+#!/bin/bash
+# Usage: buy_beacon <buyer_name> <quantity>
+BASE_DIR="$(dirname "$(dirname "$(readlink -f "$0")")")"
+STOCK_FILE="$BASE_DIR/stock.txt"
+LOCK_FILE="$BASE_DIR/stock.lock"
+LOG_FILE="$BASE_DIR/sales.log"
+STUDENT_ID="p20240058"
+
+buyer="$1"
+qty="$2"
+
+if [ -z "$buyer" ] || [ -z "$qty" ]; then
+    echo "Usage: buy_beacon <buyer_name> <quantity>"
+    exit 1
+fi
+
+if ! [[ "$qty" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Error: quantity must be a positive integer"
+    exit 1
+fi
+
+(
+  flock -x 200
+  stock=$(cat "$STOCK_FILE")
+  if [ "$qty" -gt "$stock" ]; then
+      echo "Rejected: not enough stock (have $stock, wanted $qty)"
+      exit 1
+  fi
+  new_stock=$((stock - qty))
+  echo "$new_stock" > "$STOCK_FILE"
+  echo "$(date '+%Y-%m-%d %H:%M:%S') | buyer=$buyer | qty=$qty | student_id=$STUDENT_ID | stock_after=$new_stock" >> "$LOG_FILE"
+  echo "Purchase OK: $buyer bought $qty Beacon(s). Stock now $new_stock"
+) 200>"$LOCK_FILE"

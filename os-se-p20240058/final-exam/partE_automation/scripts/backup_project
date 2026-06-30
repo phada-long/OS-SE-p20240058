@@ -1,0 +1,16 @@
+#!/bin/bash
+BASE_DIR="$(dirname "$(dirname "$(readlink -f "$0")")")"
+PROJECT_DIR="$BASE_DIR/sample_project"
+BACKUP_DIR="$BASE_DIR/project_backups"
+RETAIN=3
+mkdir -p "$BACKUP_DIR"
+ts=$(date '+%Y%m%d_%H%M%S')
+archive="$BACKUP_DIR/project_backup_$ts.tar.gz"
+tar -czf "$archive" -C "$BASE_DIR" sample_project
+echo "$(date '+%Y-%m-%d %H:%M:%S') | created $archive" >> "$BACKUP_DIR/backup.log"
+count=$(ls -1t "$BACKUP_DIR"/project_backup_*.tar.gz | wc -l)
+if [ "$count" -gt "$RETAIN" ]; then
+    ls -1t "$BACKUP_DIR"/project_backup_*.tar.gz | tail -n +$((RETAIN+1)) | xargs rm -f
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | pruned old archives, kept newest $RETAIN" >> "$BACKUP_DIR/backup.log"
+fi
+echo "Backup complete: $archive"

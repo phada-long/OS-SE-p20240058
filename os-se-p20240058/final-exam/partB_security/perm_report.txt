@@ -1,0 +1,10 @@
+-rw------- 1 se-nhem-phada se-nhem-phada 31 Jun 30 14:00 story/private.txt
+drwx--x--x 2 se-nhem-phada se-nhem-phada 4096 Jun 30 14:00 story/shared
+  File: story/private.txt
+  Size: 31        	Blocks: 8          IO Block: 4096   regular file
+Device: 252,0	Inode: 47349233    Links: 1
+Access: (0600/-rw-------)  Uid: ( 1132/se-nhem-phada)   Gid: ( 1134/se-nhem-phada)
+Access: 2026-06-30 14:00:23.056529952 +0700
+Modify: 2026-06-30 14:00:23.057529945 +0700
+Change: 2026-06-30 14:00:23.058529938 +0700
+ Birth: 2026-06-30 14:00:23.056529952 +0700

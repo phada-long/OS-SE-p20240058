@@ -1,0 +1,16 @@
+#!/bin/bash
+dirs=("sample_dirs/dir1" "sample_dirs/dir2" "sample_dirs/dir3")
+report="collector_report.txt"
+> "$report"
+echo "=== Collector Report ===" >> "$report"
+for d in "${dirs[@]}"; do
+    for f in "$d"/*; do
+        if [ -e "$f" ] && [ -r "$f" ]; then
+            echo "--- $f ---" >> "$report"
+            cat "$f" >> "$report"
+        else
+            echo "SKIPPED (missing or unreadable): $f" >> "$report"
+        fi
+    done
+done
+echo "Report written to $report"

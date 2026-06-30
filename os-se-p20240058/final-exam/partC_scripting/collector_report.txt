@@ -1,0 +1,6 @@
+=== Collector Report ===
+--- sample_dirs/dir1/report1.txt ---
+Beacon stock report Q1
+--- sample_dirs/dir2/report2.txt ---
+QuantumTech notes
+SKIPPED (missing or unreadable): sample_dirs/dir3/missing_placeholder.txt

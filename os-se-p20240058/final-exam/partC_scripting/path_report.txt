@@ -1,0 +1,2 @@
+PATH=/home/se-nhem-phada/bin:/home/se-nhem-phada/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+/home/se-nhem-phada/bin/greeter

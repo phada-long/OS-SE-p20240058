@@ -1,0 +1,15 @@
+
+A2 — Kernel Thread Mapping Evidence
+Scenario: QuantumTech / Beacon — student p20240058
+
+While ./thread_demo (PID 1482713) was running with its 3 worker threads,
+`ps -eLf` was captured filtered to this PID. The PID column is identical
+(1482713) across all rows, while the LWP column shows 4 distinct values:
+1482713 (main thread itself), 1482715, 1482716, 1482717 (the 3 worker
+threads). This confirms Linux's 1:1 user-thread to kernel-scheduled-entity
+(LWP) mapping under NPTL.
+UID          PID    PPID     LWP  C NLWP STIME TTY          TIME CMD
+se-nhem+ 1482713 1480767 1482713  0    4 13:47 pts/42   00:00:00 ./thread_demo
+se-nhem+ 1482713 1480767 1482715  0    4 13:47 pts/42   00:00:00 ./thread_demo
+se-nhem+ 1482713 1480767 1482716  0    4 13:47 pts/42   00:00:00 ./thread_demo
+se-nhem+ 1482713 1480767 1482717  0    4 13:47 pts/42   00:00:00 ./thread_demo

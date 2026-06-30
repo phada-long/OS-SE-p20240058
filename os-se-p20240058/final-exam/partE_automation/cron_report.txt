@@ -1,0 +1,22 @@
+=== Crontab entries ===
+* * * * * /home/se-nhem-phada/bin/timed_job /home/se-nhem-phada/os-se-p20240058/final-exam/partE_automation/logs/cron_recurring.log
+35 14 * * * /home/se-nhem-phada/bin/timed_job /home/se-nhem-phada/os-se-p20240058/final-exam/partE_automation/logs/cron_oneshot.log
+*/2 * * * * /home/se-nhem-phada/bin/backup_exam
+0 16 * * * /home/se-nhem-phada/bin/backup_exam
+
+=== cron_recurring.log ===
+2026-06-30 14:16:01 | timed_job fired | student=p20240058
+2026-06-30 14:17:01 | timed_job fired | student=p20240058
+2026-06-30 14:18:01 | timed_job fired | student=p20240058
+
+=== cron_oneshot.log (pending until 14:35) ===
+(not yet fired)
+
+=== ~/exam-backups listing ===
+total 288
+drwxrwxr-x  2 se-nhem-phada se-nhem-phada  4096 Jun 30 14:18 .
+drwxr-x--x 19 se-nhem-phada se-nhem-phada  4096 Jun 30 14:16 ..
+-rw-rw-r--  1 se-nhem-phada se-nhem-phada   339 Jun 30 14:18 backup_exam.log
+-rw-rw-r--  1 se-nhem-phada se-nhem-phada 92505 Jun 30 14:16 final-exam-20260630_141618.tar.gz
+-rw-rw-r--  1 se-nhem-phada se-nhem-phada 92514 Jun 30 14:16 final-exam-20260630_141635.tar.gz
+-rw-rw-r--  1 se-nhem-phada se-nhem-phada 92528 Jun 30 14:18 final-exam-20260630_141801.tar.gz

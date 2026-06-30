@@ -1,0 +1,8 @@
+#!/bin/bash
+# Launches 50 concurrent purchases against buy_beacon
+BASE_DIR="$(dirname "$(readlink -f "$0")")"
+for i in $(seq 1 50); do
+    "$BASE_DIR/buy_beacon" "buyer$i" 1 &
+done
+wait
+echo "Swarm complete."

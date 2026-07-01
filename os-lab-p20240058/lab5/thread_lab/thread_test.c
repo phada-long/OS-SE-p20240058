@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <pthread.h>
+#include <unistd.h>
 
 int global_var = 10;
 
@@ -13,7 +14,6 @@ int main() {
     pthread_t thread;
     pthread_create(&thread, NULL, thread_func, NULL);
     pthread_join(thread, NULL);
-
     printf("Main thread: global_var = %d\n", global_var);
     return 0;
 }
